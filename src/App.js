@@ -16,14 +16,14 @@ class App extends Component {
     };
 
     componentDidMount() {
-        this.context = this.canvas.current.getContext('webgl', {xrCompatible : true});
+        this.gpu = this.canvas.current.getContext('webgpu', {xrCompatible : true});
     } 
     
     render() {
         const {xrStart} = this.state;
         return (
             <div>
-                <Canvas xrStart={xrStart} canvasRef={this.canvasRef}/>
+                <Canvas xrStart={xrStart} canvasRef={this.canvasRef} gpu={this.gpu}/>
                 <StartBtn activateXR={this.activateXR}/>
             </div>
         );

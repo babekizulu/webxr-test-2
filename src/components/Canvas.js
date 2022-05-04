@@ -5,11 +5,11 @@ import ThreeScene from './ThreeScene';
 
 class Canvas extends Component {
     render() {
-        const {xrStart, canvasRef} = this.props;
+        const {xrStart, canvasRef, gpu} = this.props;
         if (xrStart) {
             return (
                 <canvas ref={canvasRef}>
-                    <ThreeScene/>
+                    <ThreeScene canvasRef={canvasRef} gpu={gpu}/>
                 </canvas>
             );
         }
